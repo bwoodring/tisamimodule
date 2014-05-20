@@ -9,9 +9,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0"
-    },
-    "require-dev": {
+        "php": ">=5.5.0",
         "sami/sami": "1.4.*@dev"
     },
     "autoload": {
