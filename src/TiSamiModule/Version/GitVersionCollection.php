@@ -45,4 +45,5 @@ class GitVersionCollection extends SamiGitCollection
 
         return $this;
     }
+
 }
