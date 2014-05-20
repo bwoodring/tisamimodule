@@ -1,0 +1,22 @@
+{
+    "name": "tireintelligence/ti-sami-module",
+    "description":  "A wrapper around the Sami documentation generation library",
+    "authors" :
+    [
+        {
+            "name": "Chris Chandler",
+            "email": "chris.chandler@tire-intelligence.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "sami/sami": "1.4.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "TiSamiModule\\": "src/"
+        }
+    }
+}
