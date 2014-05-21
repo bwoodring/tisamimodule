@@ -11,11 +11,41 @@ class Options
 {
     const VERSION_DIR_PLACEHOLDER = '%version%';
 
+    /**
+     * The directory containing the code to be parsed for documentation
+     *
+     * @var dir
+     */
     private $codebaseDir;
+
+    /**
+     * The directory in which the generated documentation will be saved
+     *
+     * @var string
+     */
     private $buildDir;
+
+    /**
+     * The directory in which to store files that are cahced as a part of the
+     * documentation generation process
+     *
+     * @var string
+     */
     private $cacheDir;
+
+    /**
+     * The number of most recent tags to include in the generation process
+     *
+     * @var int
+     */
     private $numberOfTags = 3;
-    private $apiTitle     = 'API';
+
+    /**
+     * The title to use for the generated documentation
+     *
+     * @var string
+     */
+    private $apiTitle = 'API';
 
     /**
      * If any defined property on this class is null, then one or more options
@@ -28,31 +58,62 @@ class Options
         return !(in_array(null, get_object_vars($this)));
     }
 
+    /**
+     * Get codebase directory
+     *
+     * @return string
+     */
     public function getCodebaseDir()
     {
         return $this->codebaseDir;
     }
 
+    /**
+     * Get build directory
+     *
+     * @return string
+     */
     public function getBuildDir()
     {
         return $this->buildDir;
     }
 
+    /**
+     * Get the cache directory
+     *
+     * @return string
+     */
     public function getCacheDir()
     {
         return $this->cacheDir;
     }
 
+    /**
+     * Get the number of tags
+     *
+     * @return int
+     */
     public function getNumberOfTags()
     {
         return $this->numberOfTags;
     }
 
+    /**
+     * Get the API Title
+     *
+     * @return string
+     */
     public function getApiTitle()
     {
         return $this->apiTitle;
     }
 
+    /**
+     * Sets the codebase directory to the provided string
+     *
+     * @param string $codebaseDir
+     * @return \TiSamiModule\Config\Options
+     */
     public function setCodebaseDir($codebaseDir)
     {
         // Remove trailing slash, if it exists
@@ -62,6 +123,13 @@ class Options
         return $this;
     }
 
+    /**
+     * Sets the build diretcory to the provided string with the
+     * VERSION_DIR_PLACEHOLDER appended to the end
+     *
+     * @param string $buildDir
+     * @return \TiSamiModule\Config\Options
+     */
     public function setBuildDir($buildDir)
     {
         // Remove trailing slash, if it exists
@@ -75,6 +143,13 @@ class Options
         return $this;
     }
 
+    /**
+     * Sets the cache diretcory to the provided string with the
+     * VERSION_DIR_PLACEHOLDER appended to the end
+     *
+     * @param string $cacheDir
+     * @return \TiSamiModule\Config\Options
+     */
     public function setCacheDir($cacheDir)
     {
         // Remove trailing slash, if it exists
@@ -88,12 +163,24 @@ class Options
         return $this;
     }
 
+    /**
+     * Set number of tags
+     *
+     * @param int $numberOfTags
+     * @return \TiSamiModule\Config\Options
+     */
     public function setNumberOfTags($numberOfTags)
     {
         $this->numberOfTags = $numberOfTags;
         return $this;
     }
 
+    /**
+     * Set API Title
+     *
+     * @param string $apiTitle
+     * @return \TiSamiModule\Config\Options
+     */
     public function setApiTitle($apiTitle)
     {
         $this->apiTitle = $apiTitle;
