@@ -12,8 +12,8 @@
 // Create new option instance
 $options = new \TiSamiModule\Config\Options();
 $options->setCodebaseDir(__DIR__ . '/../src/TiSamiModule')
-        ->setBuildDir('/Users/cchandler/Desktop/docs/ti-sami-module')
-        ->setCacheDir('/Users/cchandler/Desktop/docs/ti-sami-module')
+        ->setBuildDir('/webroot/docs.corp.tire-intelligence.com/ti-sami-module/build')
+        ->setCacheDir('/webroot/docs.corp.tire-intelligence.com/ti-sami-module/cache')
         ->setApiTitle('TiSamiModule API')
         ->setNumberOfTags(3);
 
