@@ -6,6 +6,7 @@ use Sami\Parser\Filter\TrueFilter;
 use Sami\Sami;
 use TiSamiModule\Version\GitVersionCollection;
 use TiSamiModule\Config\Options;
+use TiSamiModule\Console\Colors;
 
 /**
  * A generic boostrap file to set up the config required for Sami integration
@@ -19,6 +20,7 @@ use TiSamiModule\Config\Options;
  */
 class Bootstrap
 {
+    const VERSION = '1.0.0';
 
     /**
      * The options instance that was passed in via the constructor
@@ -62,6 +64,16 @@ class Bootstrap
 
         // Return configured Sami instance
         return $sami;
+    }
+
+    /**
+     * Echo console banner info
+     */
+    public function showBanner()
+    {
+        $colors = new Colors();
+        $infoString = 'TI Documentation Script v' . self::VERSION . PHP_EOL;
+        echo $colors->getColoredString($infoString, 'cyan');
     }
 
     /**
