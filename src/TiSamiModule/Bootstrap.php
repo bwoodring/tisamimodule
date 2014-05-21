@@ -75,7 +75,7 @@ class Bootstrap
         $iterator = Finder::create()
             ->files()
             ->name('*.php')
-            ->exclude('*/vendor/*')
+            ->exclude('vendor')
             ->in($this->getOptions()->getCodebaseDir());
 
         return $iterator;
