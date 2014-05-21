@@ -21,6 +21,8 @@ class Bootstrap
 {
 
     /**
+     * The options instance that was passed in via the constructor
+     *
      * @var Options
      */
     private $options;
