@@ -30,6 +30,11 @@ class Bootstrap
     private $options;
 
     /**
+     * @var Colors
+     */
+    private $colors;
+
+    /**
      * Constructor.
      *
      * @param \TiSamiModule\Config\Options $options
@@ -71,9 +76,8 @@ class Bootstrap
      */
     public function showBanner()
     {
-        $colors = new Colors();
         $infoString = 'TI Documentation Script v' . self::VERSION . PHP_EOL;
-        echo $colors->getColoredString($infoString, 'cyan');
+        echo $this->getColors()->getColoredString($infoString, 'cyan');
     }
 
     /**
@@ -126,16 +130,46 @@ class Bootstrap
      *
      * @param \TiSamiModule\Config\Options $options
      * @return \TiSamiModule\Bootstrap
-     * @throws \InvalidArgumentException
      */
     private function setOptions(Options $options)
     {
+        // Make sure options are valid
         if (!$options->isValid()) {
-            $e = 'One or more TiSamiModule\Config\Options properties is empty';
-            throw new \InvalidArgumentException($e);
+            $e = PHP_EOL
+                . 'One or more TiSamiModule\Config\Options properties is empty'
+                . PHP_EOL . PHP_EOL;
+            echo $this->getColors()->getColoredString($e, null, 'red');
+            exit(1);
         }
 
         $this->options = $options;
+        
+        return $this;
+    }
+
+    /**
+     * Get Colors for CLI
+     *
+     * @return Colors
+     */
+    public function getColors()
+    {
+        if (!$this->colors instanceof Colors) {
+            $this->setColors(new Colors());
+        }
+
+        return $this->colors;
+    }
+
+    /**
+     * Set colors
+     *
+     * @param Colors $colors
+     * @return Bootstrap
+     */
+    public function setColors(Colors $colors)
+    {
+        $this->colors = $colors;
         return $this;
     }
 
