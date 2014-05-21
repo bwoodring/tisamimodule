@@ -119,7 +119,7 @@ class Bootstrap
     private function setOptions(Options $options)
     {
         if (!$options->isValid()) {
-            $e = 'One or more properties of TiSamiModule\Config\Options empty';
+            $e = 'One or more TiSamiModule\Config\Options properties is empty';
             throw new \InvalidArgumentException($e);
         }
 
