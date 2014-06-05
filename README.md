@@ -17,7 +17,7 @@ The recommended way to get a working copy of this project is to clone the reposi
 
 The Sami library provides a bin file in the vendor directory, as added by Composer.
 
-Executing the following command from the root of this project will generate docuemntation for the TiSamiModule.
+Executing the following command from the root of this project will generate documentation for the TiSamiModule.
 
 	./vendor/bin/sami.php update config/sami.php -v
 	
@@ -29,9 +29,9 @@ This will generate/update the documentation for the module and place it into the
 
 This module can generate documentation for any PHP project using a custom configuration file.
 	
-To add configuration for an additional project, copy the file `config/sami.php` and rename it to `config/project.sami.php`, replacing the option values to match the information required by your project.  These configuration files should be committed to the repository.
+To add configuration for an additional project, copy the file `config/project.sami.php.dist` and rename it to `config/<project-name>.sami.php`, replacing the `$projectConfig` values to match the information required by your project.  These configuration files should be committed to the repository.
 
-For example, the config file for the SecurityMgmtModule is named `config/security-mgmt-module.sami.php`;
+For example, the config file for the project <strong>SecurityMgmtModule</strong> is named `config/security-mgmt-module.sami.php`.
 
 
 ## Customizing the Documentation Process
