@@ -15,13 +15,16 @@ $common = require_once 'common.config.php';
 // project being documented.
 $projectConfig = array(
     // The path to the codebase being generated
-    'codebase_path' => '/Users/cchandler/Sites/SecurityMgmtModule', //sprintf($common['codebase_path_pattern'], 'SecurityMgmtModule'),
+    'codebase_path' => sprintf($common['codebase_path_pattern'],
+        'SecurityMgmtModule'),
 
     // The path in which to save generated documentation
-    'build_path' => sprintf($common['build_path_pattern'], 'security-mgmt-module'),
+    'build_path' => sprintf($common['build_path_pattern'],
+        'security-mgmt-module'),
 
     // The path in which to save cached files from generation process
-    'cache_path' => sprintf($common['cache_path_pattern'], 'security-mgmt-module'),
+    'cache_path' => sprintf($common['cache_path_pattern'],
+        'security-mgmt-module'),
 
     // The documentation title
     'api_title' => 'SecurityMgmtModule API',
