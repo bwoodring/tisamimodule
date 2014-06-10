@@ -143,7 +143,7 @@ class Bootstrap
         }
 
         $this->options = $options;
-        
+
         return $this;
     }
 
